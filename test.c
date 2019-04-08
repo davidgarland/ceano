@@ -3,9 +3,7 @@
 ** https://github.com/davidgarland/ceano
 */
 
-#include "core.h"
-#include "proof.h"
-#include "math.h"
+#include "ceano.h"
 
 // Basic proofs.
 REFLN(Z, Z);       // Z = Z
