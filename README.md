@@ -2,9 +2,21 @@
 
 Ceano is a little library for C preprocessor macros.
 
-A lot of the ideas are borrowed from random places, and it's mostly
-just for fun-- I don't foresee most of this being extremely useful for
-real projects.
+## Example
+
+```C
+#include <ceano.h>
+
+// Check at compile time that S Z + S Z = S S Z.
+REFLN(ADD(S(Z), S(Z)), S(S(Z)));
+
+// Check at compile time that S S Z * S S Z = S S S S Z.
+REFLN(MUL(S(S(Z)), S(S(Z))), S(S(S(S(Z)))));
+
+int main() {
+  return 0;
+}
+```
 
 ## Featuring
 - ~~Zero-cost abstractions~~
