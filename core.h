@@ -75,4 +75,12 @@
 
 #define N(...) H(P(__VA_ARGS__))
 
+// NTOI() converts a peano natural to its integer equivalent.
+
+#define NTOI__Z() NTOI_Z
+#define NTOI_Z(A)
+#define NTOI__S() NTOI_S
+#define NTOI_S(A) + 1 DEFER(CAT(NTOI__, N(A)))()(P(A))
+#define NTOI(A) (0 EVAL(CAT(NTOI_, N(S(A)))(P(S(A)))))
+
 #endif /* CEANO_CORE_H */
