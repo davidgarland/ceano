@@ -30,7 +30,17 @@
 #define ADD__Z() ADD_Z
 #define ADD_Z(A, B) B
 #define ADD__S() ADD_S
-#define ADD_S(A, B) EVAL(DEFER(CAT(ADD__, N(A)))()(P(A), S(B)))
-#define ADD(A, B) EVAL(CAT(ADD_, H(A))(A, B))
+#define ADD_S(A, B) DEFER(CAT(ADD__, N(A)))()(P(A), S(B))
+#define ADD_() ADD
+#define ADD(A, B) CAT(ADD_, H(A))(A, B)
+
+// MUL() multiplies two peano naturals.
+
+#define MUL__Z() MUL_Z
+#define MUL_Z(A, B, C) C
+#define MUL__S() MUL_S
+#define MUL_S(A, B, C) DEFER(CAT(MUL__, N(B)))()(A, P(B), OBSTRUCT(ADD_)()(A, C))
+#define MUL_() MUL
+#define MUL(A, B) CAT(MUL_, H(B))(A, B, Z)
 
 #endif /* CEANO_MATH_H */

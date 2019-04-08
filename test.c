@@ -16,6 +16,12 @@ REFLN(Z, P(Z));    // Z = P Z
 
 // Mathematical proofs.
 REFLN(ADD(S(Z), S(Z)), S(S(Z))); // S Z + S Z = S S Z
+REFLN(ADD(S(S(S(Z))), S(Z)), S(S(S(S(Z))))); // S S S Z + S Z = S S S S Z
+
+REFLN(MUL(Z, Z), Z);          // Z * Z = Z
+REFLN(MUL(S(Z), Z), Z);       // S Z * Z = Z
+REFLN(MUL(S(Z), S(Z)), S(Z)); // S Z * S Z = S Z
+REFLN(MUL(S(S(Z)), S(S(Z))), S(S(S(S(Z))))); // S S Z * S S Z = S S S S Z
 
 int main() {
   return 0;
