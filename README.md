@@ -8,6 +8,8 @@ real projects.
 
 ## Featuring
 - ~~Zero-cost abstractions~~
+- Tools for designing recursive macros.
+- Tools for processing argument lists.
 - Peano naturals that may be converted to integers.
 - Peano addition and multiplication.
 - Church booleans that may be converted to integers.
