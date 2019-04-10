@@ -80,7 +80,9 @@
 #define NTOI__Z() NTOI_Z
 #define NTOI_Z(A)
 #define NTOI__S() NTOI_S
-#define NTOI_S(A) + 1 DEFER(CAT(NTOI__, N(A)))()(P(A))
-#define NTOI(A) (0 EVAL(CAT(NTOI_, N(S(A)))(P(S(A)))))
+#define NTOI_S(A) + 1 OBSTRUCT(CAT(NTOI__, N(A)))()(P(A))
+#define NTOI_() NTOI_N
+#define NTOI_N(A) (0 DEFER(CAT(NTOI__, N(S(A)))()(P(S(A)))))
+#define NTOI(A) EVAL(NTOI_N(A))
 
 #endif /* CEANO_CORE_H */

@@ -3,6 +3,8 @@
 ** https://github.com/davidgarland/ceano
 */
 
+#include <stdio.h>
+
 #include "ceano.h"
 
 // Basic proofs.
@@ -22,5 +24,6 @@ REFLN(MUL(S(Z), S(Z)), S(Z)); // S Z * S Z = S Z
 REFLN(MUL(S(S(Z)), S(S(Z))), S(S(S(S(Z))))); // S S Z * S S Z = S S S S Z
 
 int main() {
+  printf("%i\n", NTOI(MUL(S(S(S(Z))), S(S(S(Z))))));
   return 0;
 }
