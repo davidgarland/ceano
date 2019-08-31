@@ -1,11 +1,14 @@
-CC=cc
+CC=tcc
 CFLAGS=
 LDFLAGS=
 
-default: build
+default: see
+
+see:
+	$(CC) -E test.c
 
 build:
-	-@$(CC) $(CFLAGS) test.c $(LDFLAGS)
+	$(CC) test.c
 
 clean:
-	-@rm -f *.o *.out
+	-@rm -f *.o *.out *.a

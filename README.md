@@ -8,12 +8,6 @@ Ceano is a little library for C preprocessor macros.
 #include <stdio.h>
 #include <ceano.h>
 
-// Check at compile time that S Z + S Z = S S Z.
-REFLN(ADD(S(Z), S(Z)), S(S(Z)));
-
-// Check at compile time that S S Z * S S Z = S S S S Z.
-REFLN(MUL(S(S(Z)), S(S(Z))), S(S(S(S(Z)))));
-
 int main() {
   // Calculuate S S S Z * S S S Z, then convert that to an integer and print it.
   // (So it should print 3*3, 9.)
@@ -28,5 +22,4 @@ int main() {
 - Tools for processing argument lists.
 - Peano naturals that may be converted to integers.
 - Peano addition and multiplication.
-- Church booleans that may be converted to integers.
-- Reflective equality checking for simple proofs.
+- Church booleans.
